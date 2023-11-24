@@ -33,7 +33,7 @@ Untuk pertanyaan ini, apabila Anda ingin login tanpa memasukan password maka And
 
 4. Terakhir setelah melewati beberapa pertanyaan, maka generate SSH Keys telah berhasil dilakukan dan berikut screenshot detailnya: 
 
-https://internal.s3-id-jkt-1.kilatstorage.id/KB/SSH%20Keys.png
+![SSH Keys](https://internal.s3-id-jkt-1.kilatstorage.id/KB/SSH%20Keys.png)
 
 ### Langkah Kedua - Meng-copy Public key ke remote server.
 Untuk melakukan copy public key Anda dapat mengikuti langkah berikut:
@@ -51,7 +51,7 @@ Perintah diatas merupakan perintah sederhana untuk meyalin public key anda ke fo
 
 3. Setelah poin 2 dilakukan, maka Anda akan diinformasikan detail login KilatVM dengan menggunakan SSH keys sebagaimana lampiran berikut:
 
-https://internal.s3-id-jkt-1.kilatstorage.id/KB/SSH%20Copy%20Id.png
+![SSH Copy Id](https://internal.s3-id-jkt-1.kilatstorage.id/KB/SSH%20Copy%20Id.png)
 
 ### Langkah Ketiga - Melakukan penyesuaian Config SSH.
 Setelah menyalin *Public Key*, maka Anda dapat melakukan penyesuaian *config SSH*, yang mana Anda akan membatasi akses *KilatVM* menggunakan *Public Key* saja tanpa memasukan *password* lagi dan berikut langkahnya:
