@@ -64,7 +64,7 @@ $ ssh user@serverip -p(port SSH)
 ```
 
 2. Langkah selanjutnya setelah masuk ke KilatVM ikuti langkah berikut ini:
-  - Lakukan edit file sshd_config dan berikut baris perintahnya:
+  - Buka file sshd_config untuk diedit. Lokasinya berbeda tergantung pada distribusi Linux atau sistem operasi yang Anda gunakan. Umumnya, file ini terletak di /etc/ssh/sshd_config dan berikut baris perintahnya:
  
   ```
   $ vi /etc/ssh/sshd_config
@@ -74,11 +74,28 @@ $ ssh user@serverip -p(port SSH)
   $ nano /etc/ssh/sshd_config
   ```
 
-  - Berikan comment pada baris berikut:
+  - Pastikan bahwa opsi PubkeyAuthentication diatur ke yes. Ini memungkinkan otentikasi menggunakan kunci publik.
 
   ```
-  PasswordAuthentication yes
-  Ubah Menjadi
-  PasswordAuthentication No
+  PubkeyAuthentication yes
   ```  
-  - 
+  - Pastikan bahwa opsi AuthorizedKeysFile ditetapkan dengan benar. Ini menentukan lokasi file yang berisi kunci publik pengguna yang diizinkan.
+
+  ```
+  AuthorizedKeysFile      .ssh/authorized_keys
+  ```
+
+  - Jika Anda ingin mematikan otentikasi berbasis kata sandi dan hanya memungkinkan otentikasi kunci publik, pastikan bahwa opsi PasswordAuthentication diatur ke no.
+
+  ```
+  PasswordAuthentication no
+  ```
+
+3. Langkah terakhir setelah melakukan perubahan config SSH, lakukan restart service SSH dengan perintah:
+```
+$ systemctl restart sshd
+```
+
+### Langkah Keempat - Tips & Trik.
+
+
